@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
 import SupplyChainABI from "../artifacts/SupplyChain.json";
 import { BsBuildingAdd } from "react-icons/bs";
@@ -8,18 +8,14 @@ import { MdPrecisionManufacturing } from "react-icons/md";
 import { DiStreamline } from "react-icons/di";
 import { RiStockFill } from "react-icons/ri";
 import { VscAccount } from "react-icons/vsc";
-import AlertBox from "../component/AlertBox";
 import "./Styles/supply.css";
-import InventoryTable from "../component/InventoryTable";
 
 function Supply() {
-  const navigate = useNavigate();
   useEffect(() => {
     loadWeb3();
     loadBlockchaindata();
   }, []);
 
-  const [found, setFound] = useState(false);
   const [currentaccount, setCurrentaccount] = useState("");
   const [loader, setloader] = useState(true);
   const [SupplyChain, setSupplyChain] = useState();
@@ -71,12 +67,11 @@ function Supply() {
         networkData.address
       );
       setSupplyChain(supplychain);
-      var i;
-      var index;
+      // var i;
       const medCtr = await supplychain.methods.medicineCount().call();
       const med = {};
       const medStage = [];
-      for (i = 0; i < medCtr; i++) {
+      for (let i = 0; i < medCtr; i++) {
         med[i] = await supplychain.methods.MedicineStock(i + 1).call();
         medStage[i] = await supplychain.methods.showStage(i + 1).call();
       }
@@ -86,7 +81,7 @@ function Supply() {
       const rmsCount = await supplychain.methods.rmsCount().call();
       setRMSCount(rmsCount);
       const rms = {};
-      for (i = 0; i < rmsCount; i++) {
+      for (let i = 0; i < rmsCount; i++) {
         rms[i] = await supplychain.methods.RMS(i + 1).call();
       }
       setRMS(rms);
@@ -95,21 +90,21 @@ function Supply() {
       setMANCount(manCount);
       // console.log("manCount: ", manCount);
       const man = {};
-      for (i = 0; i < manCount; i++) {
+      for (let i = 0; i < manCount; i++) {
         man[i] = await supplychain.methods.MAN(i + 1).call();
       }
       setMAN(man);
       const disCount = await supplychain.methods.disCount().call();
       setDISCount(disCount);
       const dis = {};
-      for (i = 0; i < disCount; i++) {
+      for (let i = 0; i < disCount; i++) {
         dis[i] = await supplychain.methods.DIS(i + 1).call();
       }
       setDIS(dis);
       const retCount = await supplychain.methods.retCount().call();
       setRETCount(retCount);
       const ret = {};
-      for (i = 0; i < retCount; i++) {
+      for (let i = 0; i < retCount; i++) {
         ret[i] = await supplychain.methods.RET(i + 1).call();
       }
       setRET(ret);
@@ -129,9 +124,9 @@ function Supply() {
       </div>
     );
   }
-  const redirect_to_home = () => {
-    navigate("/");
-  };
+  // const redirect_to_home = () => {
+  //   navigate("/");
+  // };
   const handlerChangeID = (event) => {
     setID(event.target.value);
   };

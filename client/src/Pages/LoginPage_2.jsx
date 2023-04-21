@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
 import SupplyChainABI from "../artifacts/SupplyChain.json";
-import LoginPage from "./LoginPage";
+// import LoginPage from "./LoginPage";
 import { useNavigate } from "react-router-dom";
-import AlertBox from "../component/AlertBox";
+// import AlertBox from "../component/AlertBox";
 
 const LoginPage_2 = () => {
   const navigate = useNavigate();

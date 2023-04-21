@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 import SupplyChainABI from "../artifacts/SupplyChain.json";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 import "./Styles/registerpage.css";
-import AlertBox from "../component/AlertBox";
+// import AlertBox from "../component/AlertBox";
 
 function RegisterPage() {
   //   const history = useHistory();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
     loadWeb3();
     loadBlockchaindata();
@@ -106,10 +106,10 @@ function RegisterPage() {
       </div>
     );
   }
-  const redirect_to_home = () => {
-    // history.push("/");
-    navigate("/");
-  };
+  // const redirect_to_home = () => {
+  //   // history.push("/");
+  //   navigate("/");
+  // };
   const handlerChangeAddressRMS = (event) => {
     setRMSaddress(event.target.value);
   };

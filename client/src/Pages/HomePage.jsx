@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Web3 from "web3";
 import SupplyChainABI from "../artifacts/SupplyChain.json";
 import user from "../assets/login.jpg";
@@ -8,7 +8,7 @@ import "./Styles/homepage.css";
 import track from "../assets/track.png";
 import register from "../assets/register.png";
 import addmed from "../assets/addmed.png";
-import AlertBox from "../component/AlertBox";
+// import AlertBox from "../component/AlertBox";
 import Typewriter from "typewriter-effect";
 
 function HomePage() {
@@ -21,23 +21,9 @@ function HomePage() {
 
   const owner = "0x809EECE1ebb4D1165cAF86ED937d1EA1e0F0E533";
 
-  var i;
-
   const [currentaccount, setCurrentaccount] = useState("");
-  const [loader, setloader] = useState(true);
-  const [SupplyChain, setSupplyChain] = useState();
-  const [RMSname, setRMSname] = useState();
-  const [MANname, setMANname] = useState();
-  const [DISname, setDISname] = useState();
-  const [RETname, setRETname] = useState();
-  const [RMSplace, setRMSplace] = useState();
-  const [MANplace, setMANplace] = useState();
-  const [DISplace, setDISplace] = useState();
-  const [RETplace, setRETplace] = useState();
-  const [RMSaddress, setRMSaddress] = useState();
-  const [MANaddress, setMANaddress] = useState();
-  const [DISaddress, setDISaddress] = useState();
-  const [RETaddress, setRETaddress] = useState();
+  // const [loader, setloader] = useState(true);
+  // const [SupplyChain, setSupplyChain] = useState();
   const [RMSCount, setRMSCount] = useState();
   const [MANCount, setMANCount] = useState();
   const [DISCount, setDISCount] = useState();
@@ -67,7 +53,7 @@ function HomePage() {
   };
 
   const loadBlockchaindata = async () => {
-    setloader(true);
+    // setloader(true);
     const web3 = window.web3;
     const accounts = await web3.eth.getAccounts();
     const account = accounts[0];
@@ -83,7 +69,7 @@ function HomePage() {
         SupplyChainABI.abi,
         networkData.address
       );
-      setSupplyChain(supplychain);
+      // setSupplyChain(supplychain);
       var i;
       const rmsCount = await supplychain.methods.rmsCount().call();
       setRMSCount(rmsCount);
@@ -114,7 +100,7 @@ function HomePage() {
         ret[i] = await supplychain.methods.RET(i + 1).call();
       }
       setRET(ret);
-      setloader(false);
+      // setloader(false);
     } else {
       window.alert("The smart contract is not deployed to current network");
       // <AlertBox
@@ -226,7 +212,7 @@ function HomePage() {
     // console.log("unsuccessful owner");
   }
 
-  for (i = 0; i < RMSCount; i++) {
+  for (let i = 0; i < RMSCount; i++) {
     if (RMS && currentaccount === RMS[i][0]) {
       isAuth = true;
       // console.log(RMS);
@@ -296,7 +282,7 @@ function HomePage() {
     }
   }
 
-  for (i = 0; i < MANCount; i++) {
+  for (let i = 0; i < MANCount; i++) {
     if (MAN && currentaccount === MAN[i][0]) {
       isAuth = true;
       // console.log("success MAN");
@@ -365,7 +351,7 @@ function HomePage() {
     }
   }
 
-  for (i = 0; i < DISCount; i++) {
+  for (let i = 0; i < DISCount; i++) {
     if (DIS && currentaccount === DIS[i][0]) {
       isAuth = true;
       // console.log("success DIS");
@@ -434,7 +420,7 @@ function HomePage() {
     }
   }
 
-  for (i = 0; i < RETCount; i++) {
+  for (let i = 0; i < RETCount; i++) {
     if (RET && currentaccount === RET[i][0]) {
       isAuth = true;
       // console.log("success RET");
