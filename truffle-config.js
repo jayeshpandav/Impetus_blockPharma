@@ -1,6 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 // const fs = require("fs");
-const mnemonic =
+const MNEMONIC =
   "robot maze fruit opera bunker filter response end finger double quiz submit";
 
 /**
@@ -88,9 +88,18 @@ module.exports = {
       timeoutBlocks: 200, // # of blocks before a deployment times out (minimum/default: 50)
       skipDryRun: true, // skip dry run before migrations? (default: false for public nets)
     },
+    sepolia: {
+      provider: () =>
+        new HDWalletProvider(
+          MNEMONIC,
+          "https://sepolia.infura.io/v3/14e242740892450793f0cde5911cb792"
+        ),
+      network_id: "11155111",
+      // gas: 4465030,
+    },
     matic: {
       provider: () =>
-        new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com`),
+        new HDWalletProvider(MNEMONIC, `https://rpc-mumbai.maticvigil.com`),
       network_id: "80001",
       confirmations: 2,
       timeoutBlocks: 200,
