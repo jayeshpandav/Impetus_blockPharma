@@ -1,3 +1,8 @@
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+// const fs = require("fs");
+const mnemonic =
+  "robot maze fruit opera bunker filter response end finger double quiz submit";
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -69,6 +74,27 @@ module.exports = {
       host: "127.0.0.1", // Localhost (default: none)
       port: 7545, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
+    },
+    goerli: {
+      provider: () =>
+        new HDWalletProvider(
+          mnemonic,
+          `https://goerli.infura.io/v3/14e242740892450793f0cde5911cb792`
+        ),
+      network_id: 5, // Goerli's network id
+      chain_id: 5, // Goerli's chain id
+      gas: 5500000, // Gas limit used for deploys.
+      confirmations: 2, // # of confirmations to wait between deployments. (default: 0)
+      timeoutBlocks: 200, // # of blocks before a deployment times out (minimum/default: 50)
+      skipDryRun: true, // skip dry run before migrations? (default: false for public nets)
+    },
+    matic: {
+      provider: () =>
+        new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com`),
+      network_id: "80001",
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
     },
     //
     // An additional network, but with some advanced options…
