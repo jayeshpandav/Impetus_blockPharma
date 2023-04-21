@@ -1,0 +1,55 @@
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  /* align-items: space-around; */
+  /* right: 10px; */
+  justify-content: center;
+  margin: auto auto;
+  position: relative;
+  top: -40vh;
+  /* transition: opacity 2s; */
+}
+
+.userinfo span {
+  margin: auto 3em;
+  font-size: larger;
+}
+.userinfo img {
+  height: 150px;
+  margin-top: 2em;
+  aspect-ratio: 1 !important;
+  border-radius: 100%;
+}
+.user_options {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  /* border: 2px solid red; */
+  /* margin-bottom: 2rem; */
+  justify-content: space-between;
+  /* max-width: 100vw; */
+  transform: translateY(-50%);
+}
+.option {
+  width: 20rem;
+  aspect-ratio: 1;
+  padding: 2rem;
+  border: 2px solid white;
+  border-radius: 100%;
+  background-color: rgb(71, 217, 233);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  color: navy;
+  font-weight: 800;
+  font-size: larger;
+  cursor: pointer;
+}
+.option img {
+  margin-top: 10px;
+  width: auto;
+  border-radius: 25%;
+}

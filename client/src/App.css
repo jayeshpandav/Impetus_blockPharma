@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap");
+
+.App {
+  text-align: center;
+  /* background-color: #0a0525; */
+  color: white;
+  transition: all 1s ease;
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.question-table {
+  border-spacing: 0px 15px;
+  border-collapse: separate;
+
+  margin: 0px 5% 0px 5%;
+  width: -webkit-fill-available;
+  color: #ffffff;
+  background-color: transparent;
+}
+
+th {
+  font-weight: 600;
+  padding: 60px;
+  font-size: 0.9rem;
+}
+
+.question-table tr {
+  text-align: center;
+  /* border: 1px solid black;  */
+  width: -webkit-fill-available;
+  color: #ffffff;
+  background-color: rgb(0, 0, 0);
+  border-color: #ffffff;
+  box-shadow: 3px 2px 2px lightblue;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.question-table tr:hover {
+  box-shadow: 3px 3px 4px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  text-shadow: #ffffff;
+}
+
+.table td,
+.table th,
+.table thead th {
+  padding: 0.8rem;
+  vertical-align: top;
+  border-top: 1px solid;
+
+  border-color: rgb(255, 255, 255);
+  color: #ffffff;
+  width: 150px;
+  text-align: center;
+}
+
+.table td:last-child {
+  border-radius: 0 7px 7px 0;
+  border-right: 1px solid;
+  border-color: rgb(255, 255, 255);
+}
+
+.table td:first-child {
+  border-radius: 7px 0 0 7px;
+  border-left: 1px solid;
+  border-color: rgb(255, 255, 255);
+}
+
+.table th:first-child {
+  border-radius: 7px 0 0 7px;
+  border-left: 1px solid;
+  border-color: rgb(255, 255, 255);
+}
+.table th:last-child {
+  border-radius: 0 7px 7px 0;
+  border-right: 1px solid;
+  border-color: rgb(255, 255, 255);
+}
+
+input {
+  background-color: #123495a6 !important;
+  color: gold !important;
+  border: none;
+  margin-right: 20px;
+}
+textarea {
+  background-color: #123495a6 !important;
+  color: gold !important;
+  border: none;
+  margin-right: 20px;
+}
+
+.min-h {
+  min-height: 80vh !important;
+}
